@@ -36,7 +36,7 @@ function newTodo() {
 
   li.appendChild(checkbox);
   li.appendChild(span);
-  li.appendChild(deleteButton)
+  li.appendChild(deleteButton);
 
   list.append(li);
 
@@ -50,7 +50,7 @@ function updateCounts() {
 
 function updateUncheckedCount() {
   const unchecked = document.querySelectorAll(
-    `.${classNames.TODO_CHECKBOX}:not{:checked}.legth`
-  );
+    `.${classNames.TODO_CHECKBOX}:not(:checked)`
+  ).length;
   uncheckedCountSpan.textContent = unchecked;
 }
